@@ -1,14 +1,14 @@
 public class CurrentPriceCallout {
 
-    private static final String HOST     = 'https://api.coindesk.com';
-    private static final String VERSION  = 'v1';
-    private static final String PATH     = 'bpi/currentprice.json';
-    private static final String METHOD   = 'GET';
+    private static final String INTEGRATION_CONFIG = 'BTC_Price';
     
     public static CoindeskResources.BitcoinPriceIndexResource getCurrentPrice() {
+        IntegrationConfig config = IntegrationConfig.forName(INTEGRATION_CONFIG);
+
         HttpRequest req = new HttpRequest();
-        req.setEndpoint( getEndpoint() );
-        req.setMethod( METHOD );
+        req.setEndpoint( getEndpoint(config.host, config.namedCredentials, config.path) );
+        req.setMethod( config.method );
+        req.setTimeout(config.timeout);
         Http h = new Http();
         HttpResponse res = h.send(req);
 
@@ -25,10 +25,8 @@ public class CurrentPriceCallout {
         return body.replaceAll('"time"', '"updatetime"');
     }
 
-    private static String getEndpoint() {
-        return HOST + '/' 
-             + VERSION + '/' 
-             + PATH;
+    private static String getEndpoint(String host, String namedCredentials, String path) {
+        return ((namedCredentials != null )? 'callout:' + namedCredentials : host) +  path;
     }
 
 }

@@ -4,7 +4,6 @@ public class BitcoinHttpMock implements HttpCalloutMock {
     public HTTPResponse respond(HTTPRequest req) {
         
         // Optionally, only send a mock response for a specific endpoint and method.
-        System.assertEquals('https://api.coindesk.com/v1/bpi/currentprice.json', req.getEndpoint(), 'Endpoint is not correct');
         System.assertEquals('GET', req.getMethod(), 'HTTP method is not correct');
         
         // Create a fake response
