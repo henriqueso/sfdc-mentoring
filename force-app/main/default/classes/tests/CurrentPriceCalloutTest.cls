@@ -14,7 +14,7 @@ private class CurrentPriceCalloutTest {
         System.assertEquals(
             'Mar 10, 2023 20:53:00 UTC', 
             resp.updatetime.updated, 
-            'Bitcoin is expected as chartName'
+            'Mar 10, 2023 20:53:00 UTC is expected as updatetime'
         );
         System.assertEquals(
             10, 
