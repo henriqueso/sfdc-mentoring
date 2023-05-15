@@ -19,17 +19,17 @@ private class CurrentPriceCalloutTest {
         System.assertEquals(
             10, 
             resp.updatetime.updatedISO.day(), 
-            '10 is expecteed as updatedISO day'
+            '10 is expected as updatedISO day'
         );
         System.assertEquals(
             3, 
             resp.updatetime.updatedISO.month(), 
-            '3 is expecteed as updatedISO month'
+            '3 is expected as updatedISO month'
         );
         System.assertEquals(
             2023, 
             resp.updatetime.updatedISO.year(), 
-            '2023 is expecteed as updatedISO day'
+            '2023 is expected as updatedISO day'
         );
         System.assertEquals(
             'Bitcoin', 
