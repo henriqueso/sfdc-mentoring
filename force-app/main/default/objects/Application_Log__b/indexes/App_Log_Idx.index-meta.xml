@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Index xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>App_Log_Idx</fullName>
+    <fields>
+        <name>Execution_Date__c</name>
+        <sortDirection>DESC</sortDirection>
+    </fields>
+    <label>App Log Idx</label>
+</Index>
